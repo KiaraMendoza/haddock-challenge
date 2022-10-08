@@ -86,7 +86,7 @@ export class Main {
 
     const buyProducts = prompt("Do you want to buy some products? (yes/no) ");
     let buying = buyProducts && affirmativeResponses.includes(buyProducts);
-    this.handleBuyItems(buying);
+    buying && this.handleBuyItems(buying);
 
     console.log("Have a nice day!");
   };
