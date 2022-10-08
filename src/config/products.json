@@ -1,18 +1,18 @@
 {
   "products": [
     {
-      "number": 12,
+      "id": 12,
       "name": "Spring rolls",
       "price": 4.5,
       "applicableDiscountId": 1
     },
     {
-      "number": 21,
+      "id": 21,
       "name": "Fried rice with pork",
       "price": 6.0
     },
     {
-      "number": 37,
+      "id": 37,
       "name": "Chicken with almond sauce",
       "price": 6.5
     }

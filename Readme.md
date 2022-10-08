@@ -10,6 +10,12 @@ Install dependencies
   npm install
 ```
 
+Run the typescript
+
+```bash
+  npm run tsc
+```
+
 Run the project
 
 ```bash

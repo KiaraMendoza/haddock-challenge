@@ -17,30 +17,26 @@ export class OrderHandler implements IOrderHandler {
     this.subTotalPrice = 0;
     this.totalPrice = 0;
   }
-  add = (number: ProductId, quantity: number): void => {
-    const alreadyOnCart = this.items.filter(
-      (item) => item.number === number
-    )[0];
+  add = (id: ProductId, quantity: number): void => {
+    const alreadyOnCart = this.items.filter((item) => item.id === id)[0];
     if (alreadyOnCart) {
       this.items = this.items.map((item) => {
-        if (item.number === number) {
+        if (item.id === id) {
           item.quantity += quantity;
         }
         return item;
       });
     } else {
-      const item = activeProducts.filter(
-        (product) => product.number === number
-      )[0];
+      const item = activeProducts.filter((product) => product.id === id)[0];
       this.items.push({ ...item, quantity });
     }
   };
 
-  remove = (number: ProductId, quantity: number): void => {
-    const isOnCart = this.items.filter((item) => item.number === number);
+  remove = (id: ProductId, quantity: number): void => {
+    const isOnCart = this.items.filter((item) => item.id === id);
     if (isOnCart) {
       this.items.map((item) => {
-        if (item.number === number) {
+        if (item.id === id) {
           item.quantity -= quantity;
         }
         return item;

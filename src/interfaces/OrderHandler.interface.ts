@@ -1,8 +1,8 @@
 import { IProduct, ProductId } from "./Product.interface";
 
 export interface IOrderHandler {
-  add: (number: ProductId, quantity: number) => void;
-  remove: (number: ProductId, quantity: number) => void;
+  add: (id: ProductId, quantity: number) => void;
+  remove: (id: ProductId, quantity: number) => void;
   setSubTotal: () => void;
   setTotal: () => void;
   getSubTotal: () => number;

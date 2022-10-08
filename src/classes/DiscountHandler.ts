@@ -54,7 +54,7 @@ export class DiscountHandler implements IDiscountHandler {
     } else {
       affectedProducts =
         this.products.filter((product) => {
-          return entitledProductIds?.includes(product.number);
+          return entitledProductIds?.includes(product.id);
         }) || [];
     }
 
@@ -82,8 +82,6 @@ export class DiscountHandler implements IDiscountHandler {
       case DiscountType["fixed-amount"]:
         if (minimumAmount && this.subTotalPrice > minimumAmount)
           discountAmount += discountValue;
-        break;
-      default:
         break;
     }
     this.discountAmount += discountAmount;

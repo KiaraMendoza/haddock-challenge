@@ -1,7 +1,7 @@
 export type ProductId = number;
 
 export interface IProduct {
-  number: ProductId;
+  id: ProductId;
   name: string;
   price: number;
   applicableDiscountId?: number;
