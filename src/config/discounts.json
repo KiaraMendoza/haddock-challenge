@@ -1,0 +1,22 @@
+{
+  "discounts": [
+    {
+      "id": 1,
+      "name": "2-for-1",
+      "prerequisites": {
+        "minAmount": 2,
+        "discountValue": -0.5,
+        "discountType": 1
+      }
+    },
+    {
+      "id": 2,
+      "name": "Spend 20€ for 5€ discount",
+      "prerequisites": {
+        "minAmount": 20,
+        "discountValue": -5,
+        "discountType": 2
+      }
+    }
+  ]
+}
