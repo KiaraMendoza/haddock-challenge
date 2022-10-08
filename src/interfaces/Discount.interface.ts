@@ -1,7 +1,7 @@
 import { DiscountType } from "../enums";
 import { ProductId } from "./Product.interface";
 
-export interface Discount {
+export interface IDiscount {
   id: number;
   name: string;
   prerequisites: {

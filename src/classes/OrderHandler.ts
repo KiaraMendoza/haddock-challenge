@@ -1,12 +1,17 @@
-import { OrderHandler } from "../interfaces/OrderHandler.interface";
-import { ProductId, ProductOnCart } from "../interfaces/Product.interface";
+import { IOrderHandler } from "../interfaces/OrderHandler.interface";
+import {
+  IProduct,
+  ProductId,
+  IProductOnCart,
+} from "../interfaces/Product.interface";
 import { products as activeProducts } from "../config/products.json";
 import { DiscountHandler } from "./DiscountHandler";
 
-export class MyOrderHandler implements OrderHandler {
-  private items: ProductOnCart[];
+export class OrderHandler implements IOrderHandler {
+  private items: IProductOnCart[];
   private subTotalPrice: number;
   private totalPrice: number;
+
   constructor() {
     this.items = [];
     this.subTotalPrice = 0;
@@ -63,12 +68,15 @@ export class MyOrderHandler implements OrderHandler {
       products: this.items,
       subTotalPrice: this.subTotalPrice,
     }).getDiscountAmount();
-    console.log({ discount });
     this.totalPrice = subTotal + discount;
   };
 
   getTotal = (): number => {
     this.setTotal();
     return this.totalPrice;
+  };
+
+  getProductsOnCart = (): IProduct[] => {
+    return this.items;
   };
 }

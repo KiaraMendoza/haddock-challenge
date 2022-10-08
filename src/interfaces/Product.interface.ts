@@ -1,12 +1,12 @@
 export type ProductId = number;
 
-export interface Product {
+export interface IProduct {
   number: ProductId;
   name: string;
   price: number;
   applicableDiscountId?: number;
 }
 
-export interface ProductOnCart extends Product {
+export interface IProductOnCart extends IProduct {
   quantity: number;
 }

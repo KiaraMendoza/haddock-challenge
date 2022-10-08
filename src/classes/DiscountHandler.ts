@@ -1,15 +1,16 @@
 import { DiscountType } from "../enums";
-import { ProductOnCart } from "../interfaces/Product.interface";
+import { IProductOnCart } from "../interfaces/Product.interface";
 import { discounts as activeDiscounts } from "../config/discounts.json";
-import { Discount } from "../interfaces";
+import { IDiscount, IDiscountHandler } from "../interfaces";
 
-export class DiscountHandler {
-  private products: ProductOnCart[];
-  private discountsApplied: Discount[] | undefined;
+export class DiscountHandler implements IDiscountHandler {
+  private products: IProductOnCart[];
+  private discountsApplied: IDiscount[] | undefined;
   private discountAmount: number;
   private subTotalPrice: number;
+
   constructor(parameters: {
-    products: ProductOnCart[];
+    products: IProductOnCart[];
     subTotalPrice: number;
   }) {
     this.products = parameters.products;
@@ -36,7 +37,7 @@ export class DiscountHandler {
     this.discountsApplied = [...productsApplicableDiscounts, ...cartDiscounts];
   };
 
-  handleCalculateDiscounts = (discountApplied: Discount) => {
+  handleCalculateDiscounts = (discountApplied: IDiscount) => {
     let discountAmount = 0;
     let affectedProducts = [];
     const {
@@ -79,8 +80,8 @@ export class DiscountHandler {
           Math.ceil(affectedProductsQuantity / minimumQuantity);
         break;
       case DiscountType["fixed-amount"]:
-        if (!minimumAmount) return;
-        if (this.subTotalPrice > minimumAmount) discountAmount += discountValue;
+        if (minimumAmount && this.subTotalPrice > minimumAmount)
+          discountAmount += discountValue;
         break;
       default:
         break;
