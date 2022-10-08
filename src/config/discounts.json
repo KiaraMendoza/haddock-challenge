@@ -4,21 +4,22 @@
       "id": 1,
       "name": "2-for-1",
       "prerequisites": {
-        "minAmount": 2,
+        "minimumQuantity": 2,
         "discountValue": -1,
-        "discountType": 1
-      },
-      "isGlobal": "false"
+        "discountType": 1,
+        "targetType": "entitled",
+        "entitledProductIds": [12]
+      }
     },
     {
       "id": 2,
       "name": "Spend 20€ for 5€ discount",
       "prerequisites": {
-        "minAmount": 20,
+        "minimumAmount": 20,
         "discountValue": -5,
-        "discountType": 2
-      },
-      "isGlobal": "true"
+        "discountType": 2,
+        "targetType": "all"
+      }
     }
   ]
 }
