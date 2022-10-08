@@ -5,9 +5,10 @@
       "name": "2-for-1",
       "prerequisites": {
         "minAmount": 2,
-        "discountValue": -0.5,
+        "discountValue": -1,
         "discountType": 1
-      }
+      },
+      "isGlobal": "false"
     },
     {
       "id": 2,
@@ -16,7 +17,8 @@
         "minAmount": 20,
         "discountValue": -5,
         "discountType": 2
-      }
+      },
+      "isGlobal": "true"
     }
   ]
 }

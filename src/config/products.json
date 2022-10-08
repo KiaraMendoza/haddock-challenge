@@ -3,7 +3,8 @@
     {
       "number": 12,
       "name": "Spring rolls",
-      "price": 4.5
+      "price": 4.5,
+      "applicableDiscountType": 1
     },
     {
       "number": 21,

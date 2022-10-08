@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "start": "tsc"
+    "start": "rm -r dist && tsc && ts-node src/index.ts"
   },
   "devDependencies": {
     "@types/node": "^18.8.3",
